@@ -2898,7 +2898,7 @@ var PROBLEMS = [
         ['Yes. Every vertical line meets the graph at most once.', 'Each input `x` has exactly one output, which is what the vertical line test checks.'],
         ['No. The horizontal line `y = 3` meets the graph three times.', 'The test uses vertical lines. Three inputs sharing the output 3 is allowed for a function.'],
         ['No. The graph changes direction.', 'Changing direction is allowed. A graph fails only when some vertical line meets it twice, which would give one input two outputs.']] }],
-    graph: { x: [-4, 5], y: [-1, 6], ticks: { x: 1, y: 1 }, fns: [{ f: graphF, domain: [-3, 4] }], hlines: [{ y: 3, dash: true, role: 'muted' }],
+    graph: { x: [-4, 5], y: [-1, 6], ticks: { x: 1, y: 1 }, fns: [{ f: graphF, domain: [-3, 4] }], hlines: [{ y: 3, role: 'muted' }],
       dots: [{ x: -3, y: 5 }, { x: 4, y: 2 }, { x: -2, y: 3 }, { x: 0, y: 3 }, { x: 3, y: 3 }],
       aria: 'The same graph of f with a dashed horizontal line at y = 3 crossing it at x = −2, 0 and 3, each crossing marked.' },
     after: 'The line `y = 3` meets the graph at `x = −2`, 0 and 3, so `f(x) = 3` has three solutions.' },
