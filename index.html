@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Unit 1 Practice: Functions as Models</title>
+<title>Unit 1 Practice</title>
 <meta name="description" content="Practice reading functions and naming inside and outside functions with feedback on each line of your work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2809,7 +2809,7 @@ var selfcheck = (function () {
    ==================================================================================== */
 
 /* ---------------- links ---------------- */
-var PAUL_C = 'https://tutorial.math.lamar.edu/Classes/CalcI/', PAUL_P = 'https://tutorial.math.lamar.edu/Problems/CalcI/';
+var PAUL_C = 'https://tutorial.math.lamar.edu/Classes/CalcI/';
 function paulEx(page, title, ex) { return [PAUL_C + page + '.aspx', 'Paul’s Online Math Notes: ' + title + (ex ? ', ' + ex : '')]; }
 var OSX = 'https://openstax.org/books/calculus-volume-1/pages/1-1-review-of-functions';
 function osEx(ex) { return [OSX, 'OpenStax Calculus Volume 1, 1.1 Review of Functions' + (ex ? ', ' + ex : '')]; }
@@ -3054,26 +3054,26 @@ var PROBLEMS = [
         hints: ['Take the square root of 36.'] }] },
 
   /* 8. inside, middle and outside: three layers */
-  { id: 'p8', sec: 'sec-inside', task: 'This composite has three layers. Name the inside, middle and outside functions, so that `h(x) = f(m(g(x)))`.', board: 'h(x) = cos^2(3x)', teach: T_INSIDE,
+  { id: 'p8', sec: 'sec-inside', task: 'This composite has three layers. Name the inside, middle and outside functions, so that `h(x) = f(m(g(x)))`.', board: 'h(x) = sin^2(4x)', teach: T_INSIDE,
     steps: [
-      { lead: 'What does `cos^2(3x)` mean?', ok: 0, pick: [
-        ['`(cos(3x))^2`, the square of `cos(3x)`', 'The 2 on `cos` squares the cosine’s output, so squaring is the last operation.'],
-        ['`cos(9x^2)`', 'The 2 sits on `cos`, not on `3x`. `cos^2(3x)` squares the cosine of `3x`.'],
-        ['`cos(cos(3x))`', 'For powers, `cos^2` means the cosine squared, not the cosine applied twice.']] },
-      { lead: 'For a number `x`, in what order do you compute `(cos(3x))^2`?', ok: 0, pick: [
-        ['Multiply by 3, take the cosine, then square', 'Inside to outside: `3x`, then `cos`, then the square.'],
-        ['Take the cosine, multiply by 3, then square', '`3x` is inside the cosine, so the multiplying happens first.'],
-        ['Square, multiply by 3, then take the cosine', 'The square is outside the parentheses, so it comes last.']] },
-      { lead: 'Type the inside function.', ask: 'g(x) =', ans: '3x',
-        wrongs: [['cos(3x)', '`cos(3x)` is the inside two layers together. The first step on `x` is multiplying by 3.'],
-          ['x', 'The first thing done to `x` is multiplying it by 3, so the inside function is `3x`.']],
-        hints: ['What is computed first, before any cosine?'] },
-      { lead: 'Type the middle function, using `u` for its input.', ask: 'm(u) =', v: 'u', ans: 'cos(u)',
-        wrongs: [['cos(3u)', 'The 3 belongs to the inside function `g(x) = 3x`. The middle function acts on `u = 3x`, so it is `cos u`.'],
-          ['cos^2(u)', 'The square is a separate layer, the last one. The middle function is the cosine alone.']],
-        hints: ['The middle layer acts on the output of `3x`. Which function is that?'] },
+      { lead: 'What does `sin^2(4x)` mean?', ok: 0, pick: [
+        ['`(sin(4x))^2`, the square of `sin(4x)`', 'The 2 on `sin` squares the sine’s output, so squaring is the last operation.'],
+        ['`sin(16x^2)`', 'The 2 sits on `sin`, not on `4x`. `sin^2(4x)` squares the sine of `4x`.'],
+        ['`sin(sin(4x))`', 'For powers, `sin^2` means the sine squared, not the sine applied twice.']] },
+      { lead: 'For a number `x`, in what order do you compute `(sin(4x))^2`?', ok: 0, pick: [
+        ['Multiply by 4, take the sine, then square', 'Inside to outside: `4x`, then `sin`, then the square.'],
+        ['Take the sine, multiply by 4, then square', '`4x` is inside the sine, so the multiplying happens first.'],
+        ['Square, multiply by 4, then take the sine', 'The square is outside the parentheses, so it comes last.']] },
+      { lead: 'Type the inside function.', ask: 'g(x) =', ans: '4x',
+        wrongs: [['sin(4x)', '`sin(4x)` is the inside two layers together. The first step on `x` is multiplying by 4.'],
+          ['x', 'The first thing done to `x` is multiplying it by 4, so the inside function is `4x`.']],
+        hints: ['What is computed first, before any sine?'] },
+      { lead: 'Type the middle function, using `u` for its input.', ask: 'm(u) =', v: 'u', ans: 'sin(u)',
+        wrongs: [['sin(4u)', 'The 4 belongs to the inside function `g(x) = 4x`. The middle function acts on `u = 4x`, so it is `sin u`.'],
+          ['sin^2(u)', 'The square is a separate layer, the last one. The middle function is the sine alone.']],
+        hints: ['The middle layer acts on the output of `4x`. Which function is that?'] },
       { lead: 'Type the outside function, using `u` for its input.', ask: 'f(u) =', v: 'u', ans: 'u^2',
-        wrongs: [['cos^2(u)', 'The cosine is the middle layer. The outside function only squares.'],
+        wrongs: [['sin^2(u)', 'The sine is the middle layer. The outside function only squares.'],
           ['2u', 'Squaring is `u^2`, not `2u`.']],
         hints: ['The last operation squares whatever it is given.'] }] }
 ];
@@ -3236,14 +3236,14 @@ function sectionHTML(s, n) {
   return sec(s.id, String(n + 1), s.title, s.lede) + col(ps.map(function (p) { return blk(p.id, function () { return problemHTML(p); }); }).join(''));
 }
 function backHTML() {
-  return sec('sec-back', '', 'Back to Paul', '') + prose('', [
-    'If one type of problem gave you trouble, rework its practice problems: Paul’s [Functions](' + PAUL_P + 'Functions.aspx), Problems 1, 2, 33 and 34, or the [OpenStax 1.1 exercises](' + OSX + ') 1, 29 and 51.',
-    'Next, complete Problem Set 0, Parts 1 and 2. Unit 2 continues in Paul’s notes with [Tangent Lines and Rates of Change](' + PAUL_C + 'Tangents_Rates.aspx).']);
+  return sec('sec-back', '', 'What Comes Next', '') + prose('', [
+    'If one kind of problem gave you trouble, find the example of that kind in Unit 1 Worked Examples, cover its solution, and work it by hand.',
+    'Next, complete the Unit 1 Problem Set.']);
 }
 function page() {
-  return header('Unit 1 Practice', SECTIONS_P.map(function (s) { return ['#' + s.id, s.nav]; }).concat([['#sec-back', 'Back to Paul']])) +
-    '<main id="top">' + hero({ kicker: 'Calculus I · Unit 1', title: 'Unit 1 Practice: Functions as Models',
-      dek: 'Use this page after the Unit 1 reading and its practice problems. Each problem goes one step at a time, and each answer is checked before the next step opens. Type a power with ⟦^⟧, as in ⟦x^2⟧, and put a whole top or bottom in parentheses, as in ⟦(x + 1)/(x − 2)⟧.' }) +
+  return header('Unit 1 Practice', SECTIONS_P.map(function (s) { return ['#' + s.id, s.nav]; }).concat([['#sec-back', 'Next']])) +
+    '<main id="top">' + hero({ kicker: 'Calculus I · Unit 1: Functions as Models', title: 'Unit 1 Practice',
+      dek: 'Use this page after you read Unit 1: Functions as Models and Unit 1 Worked Examples. Each problem goes one step at a time, and each answer is checked before the next step opens. Type a power with ⟦^⟧, as in ⟦x^2⟧, and put a whole top or bottom in parentheses, as in ⟦(x + 1)/(x − 2)⟧.' }) +
     SECTIONS_P.map(sectionHTML).join('') + backHTML() + '</main>';
 }
 /* the composition ring renders as a small dot that reads like a product; mark it so page.css can enlarge it */
